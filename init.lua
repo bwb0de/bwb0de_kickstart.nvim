@@ -1016,3 +1016,41 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 -- Insert custom commands here
+--
+
+
+vim.api.nvim_create_user_command("Heap", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_heap_base.c') end, {
+})
+
+vim.api.nvim_create_user_command("Swich", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_switch.c') end, {
+})
+
+vim.api.nvim_create_user_command("Swich2", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_switch2.c') end, {
+})
+
+vim.api.nvim_create_user_command("Input", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_input_info.c') end, {
+})
+
+vim.api.nvim_create_user_command("Select", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_input_op.c') end, {
+})
+
+vim.api.nvim_create_user_command("Raylib", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_base.c') end, {
+})
+
+vim.api.nvim_create_user_command("RayArrow", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_arrows.c') end, {
+})
+
+vim.api.nvim_create_user_command("RayMove", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_tank_move.c') end, {
+})
+
+vim.api.nvim_create_user_command("RayBullet", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_bullets.c') end, {
+})
