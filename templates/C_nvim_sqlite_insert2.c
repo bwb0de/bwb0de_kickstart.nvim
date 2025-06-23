@@ -1,4 +1,4 @@
-int adicionar_valor_em_tabela_isolada(sqlite3 *db, char *v1, char *v2, int v3, double v4) {
+int adicionar_valor_em_tabelas_relacionadas(sqlite3 *db, const char *v1, const char *v2, int v3, double v4, int v5, int v6) {
     //int id = obter_id(db, nome); //condicional unique entry...
     //if (id != -1) {return id;}
  
@@ -17,9 +17,14 @@ int adicionar_valor_em_tabela_isolada(sqlite3 *db, char *v1, char *v2, int v3, d
     sqlite3_finalize(stmt);
 
     id = sqlite3_last_insert_rowid(db);
-    return id;
-   
+
+    //Comandos de adição nas tabelas relacionadas usando o id
+    if (email)  { add_email(db, id, v5); } 
+    if (numero) { add_phone(db, id, v6); }
+
     return id;
 }
+
+
 
 
