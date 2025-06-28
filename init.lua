@@ -846,7 +846,8 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'tokyonight-storm'
+      vim.cmd.colorscheme 'sorbet'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
@@ -1006,19 +1007,31 @@ vim.api.nvim_create_user_command("Swap", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_swap.c') end, {
 })
 
-vim.api.nvim_create_user_command("SQLins", function()
+vim.api.nvim_create_user_command("SQLi", function()
+  vim.cmd('read ~/.config/nvim/templates/sqlite_insert.sql') end, {
+})
+
+vim.api.nvim_create_user_command("SQLs", function()
+  vim.cmd('read ~/.config/nvim/templates/sqlite_select.sql') end, {
+})
+
+vim.api.nvim_create_user_command("SQLj", function()
+  vim.cmd('read ~/.config/nvim/templates/sqlite_join.sql') end, {
+})
+
+vim.api.nvim_create_user_command("CSQLi", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_sqlite_insert.c') end, {
 })
 
-vim.api.nvim_create_user_command("SQLinsrel", function()
+vim.api.nvim_create_user_command("CSQLir", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_sqlite_insert2.c') end, {
 })
 
-vim.api.nvim_create_user_command("SQLiter", function()
+vim.api.nvim_create_user_command("CSQLiter", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_sqlite_iter.c') end, {
 })
 
-vim.api.nvim_create_user_command("SQLselect", function()
+vim.api.nvim_create_user_command("CSQLs", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_sqlite_iter2.c') end, {
 })
 
@@ -1069,5 +1082,9 @@ vim.api.nvim_create_user_command("RayMove", function()
 
 vim.api.nvim_create_user_command("RayBullet", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_bullets.c') end, {
+})
+
+vim.api.nvim_create_user_command("Cor", function()
+  vim.cmd(':Telescope colorscheme') end, {
 })
 
