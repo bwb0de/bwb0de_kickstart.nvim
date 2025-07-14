@@ -156,6 +156,10 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Corretor ortográfico pt_BR
+--vim.opt.spell = true
+--vim.opt.spelllang = 'pt_br'
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -847,7 +851,7 @@ require('lazy').setup({
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       -- vim.cmd.colorscheme 'tokyonight-storm'
-      vim.cmd.colorscheme 'sorbet'
+      -- vim.cmd.colorscheme 'sorbet'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
@@ -999,6 +1003,10 @@ vim.api.nvim_create_user_command("For", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_for.c') end, {
 })
 
+vim.api.nvim_create_user_command("For2", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_for_nest.c') end, {
+})
+
 vim.api.nvim_create_user_command("ForRv", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_for_rev.c') end, {
 })
@@ -1017,6 +1025,18 @@ vim.api.nvim_create_user_command("SQLs", function()
 
 vim.api.nvim_create_user_command("SQLj", function()
   vim.cmd('read ~/.config/nvim/templates/sqlite_join.sql') end, {
+})
+
+vim.api.nvim_create_user_command("CSQLc", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_sqlite_create.c') end, {
+})
+
+vim.api.nvim_create_user_command("CSQLctab1", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_sqlite_create_tab.c') end, {
+})
+
+vim.api.nvim_create_user_command("CSQLctab2", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_sqlite_create_tab2.c') end, {
 })
 
 vim.api.nvim_create_user_command("CSQLi", function()
@@ -1068,19 +1088,23 @@ vim.api.nvim_create_user_command("Select", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_input_op.c') end, {
 })
 
-vim.api.nvim_create_user_command("Raylib", function()
+vim.api.nvim_create_user_command("Rl", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_base.c') end, {
 })
 
-vim.api.nvim_create_user_command("RayArrow", function()
+vim.api.nvim_create_user_command("RlMouseSelect", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_mouse.c') end, {
+})
+
+vim.api.nvim_create_user_command("RlArrow", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_arrows.c') end, {
 })
 
-vim.api.nvim_create_user_command("RayMove", function()
+vim.api.nvim_create_user_command("RlTkMove", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_tank_move.c') end, {
 })
 
-vim.api.nvim_create_user_command("RayBullet", function()
+vim.api.nvim_create_user_command("RlBullet", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_bullets.c') end, {
 })
 
