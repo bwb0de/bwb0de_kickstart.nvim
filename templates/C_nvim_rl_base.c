@@ -1,9 +1,10 @@
+#include <stdlib.h>
+#include <time.h>
 #include <raylib.h>
 #include <stdio.h>
 #include <math.h>
 #include "geometria.h"
 #include "gamming.h"
-
 
 #define TITULO " "
 #define SCREEN_WIDTH 800
@@ -13,27 +14,33 @@
 
 
 int main() {
+    srand(time(NULL));
+
     game_status_t g = {
-        .vidas=3, 
-        .vitalidade_maxima=100, 
-        .vitalidade=100, 
-        .cor_fundo=BACKGROUND_COLOR
+        .player_lives=3, 
+        .player_helth_max=100, 
+        .player_helth=100, 
+        .background=BACKGROUND_COLOR
     };
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, TITULO);
     SetTargetFPS(FPS);
 
     while (!WindowShouldClose()) {
-        if (fim_de_jogo(&g)) {break;}
+        if (g.game_over) {break;}
         //Lógica do jogo
 
 
         BeginDrawing();
-            ClearBackground(g.cor_fundo);
+            ClearBackground(g.background);
 
         EndDrawing();
 
     }
     CloseWindow();
+
+    cleanup:
+        free();
+
     return 0;
 }

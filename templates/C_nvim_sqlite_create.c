@@ -6,7 +6,7 @@
 #include <stdbool.h>
 
 
-int siur_db(sqlite3 *db) {
+int create_db(sqlite3 *db) {
     char *errmsg = NULL;
 
     const char *queries[] = {

@@ -1092,6 +1092,10 @@ vim.api.nvim_create_user_command("Rl", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_base.c') end, {
 })
 
+vim.api.nvim_create_user_command("RlMatrixMap", function()
+  vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_matrixmap.c') end, {
+})
+
 vim.api.nvim_create_user_command("RlMouseSelect", function()
   vim.cmd('read ~/.config/nvim/templates/C_nvim_rl_mouse.c') end, {
 })
